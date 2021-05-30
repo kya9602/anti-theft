@@ -1,0 +1,101 @@
+motion모듈을 이용한 cctv
+
+ 
+
+설치
+
+sudo apt install motion
+
+ 
+
+ 
+
+설정(ctrl+w를 통해 찾아서 수정)
+
+sudo nano /etc/motion/motion.conf
+
+daemon on #데몬사용
+
+width 640
+
+height 480
+
+framerate 100
+
+ffmpeg_video_codec mp4 #저장할 영상파일 확장자
+
+target_dir /home/pi/cctv #저장할 영상파일 위치
+
+ 
+
+stream_motion on #동작이 포착되었을때 프레임 최대로촬영
+
+emulate_motion off #off=움직임 감지시 저장,on=항상저장
+
+output_picture off #사진으로 저장할지 off시 영상으로 저장
+
+ 
+
+#스트리밍설정
+
+stream_port 1111 #스트리밍될 포트
+
+webcontrol_localhost off 
+
+stream_localhost off 
+
+ 
+
+설정 변경후 재실행
+
+sudo service motion stop
+
+sudo service motion restart
+
+ 
+
+백그라운드로 실행
+
+sudo motion -n & 
+
+ 
+
+ip주소:설정포트 접속하여 확인
+
+설정에 맞춰서 잘 작동하는지 확인해본다
+
+ex)움직임포착시 영상 저장되었는지 확인
+
+ 
+
+ 
+
+-----------------------------------------------------------------------------------------------------------------
+
+ 
+
+motion동작 확인
+
+ 
+
+작업확인
+
+jobs 
+
+ 
+
+작업 포그라운드로 전환
+
+fg %작업번호
+
+ 
+
+작업 종료(fg 에서 작업중일때)
+
+ctrl+c
+
+ 
+
+작업 백그라운드로 전환
+
+bg %작업번호
