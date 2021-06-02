@@ -17,7 +17,9 @@ if __name__ == '__main__':
 			line = float(line)
 			if line:
 				camera.start_preview()
-				sleep(1)
-				saveFileName=datetime.datetime.now().strftime('%y%m%d%H%M%S%f')+'.jpg'
-				camera.capture('/home/pi/anti-theft/pictures/' +saveFileName)
+				sleep(0.001)
+				saveFileName=datetime.datetime.now().strftime('%y%m%d%H%M%S%f')+'.h264'
+				camera.start_recording('/home/pi/anti-theft/pictures/' +saveFileName)
+				sleep(10)
+				camera.stop_recording()
 				camera.stop_preview()
