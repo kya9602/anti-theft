@@ -12,3 +12,5 @@ This is a parcel anti-theft device project that links Arduino with a load cell s
 기능도 입니다.
 
 <img width="308" alt="1" src="https://user-images.githubusercontent.com/80305565/122334860-4c1ca100-cf75-11eb-9537-f57ae617e5cd.png">
+
+-----------------------------------------
