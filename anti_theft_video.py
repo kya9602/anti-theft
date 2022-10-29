@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from picamera import PiCamera
 from time import sleep
 import serial
@@ -19,7 +18,7 @@ if __name__ == '__main__':
 				camera.start_preview()
 				sleep(0.001)
 				saveFileName=datetime.datetime.now().strftime('%y%m%d%H%M%S%f')+'.h264'
-				camera.start_recording('/home/pi/anti-theft/pictures/' +saveFileName)
+				camera.start_recording('/home/pi/anti-theft/videos/' +saveFileName)
 				sleep(10)
 				camera.stop_recording()
 				camera.stop_preview()
